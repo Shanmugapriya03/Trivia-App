@@ -1,0 +1,20 @@
+<p>
+  <li *ngFor="let questionDetails of quizSet">
+    CATEGORY : {{questionDetails?.category}}
+    <br>
+    TYPE : {{questionDetails?.type}}
+    <br>
+    DIFFICULTY : {{questionDetails?.difficulty}}
+    <br>
+    Q : <span>{{questionDetails?.question}}</span>
+    <br>
+    CHOICE :
+    <p>
+      <span *ngFor="let choice of questionDetails?.choices">
+        {{choice}}
+        <br>
+      </span>
+    </p>
+    <hr>
+  </li>
+</p>

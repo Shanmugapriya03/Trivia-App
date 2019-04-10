@@ -1,18 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <li *ngFor="let questionDetails of quizSet">
-    CATEGORY : {{questionDetails?.category}}
-    <br>
-    TYPE : {{questionDetails?.type}}
-    <br>
-    DIFFICULTY : {{questionDetails?.difficulty}}
-    <br>
-    Q : <span [innerHTML]="questionDetails?.question"></span>
-    <hr>
-  </li>
+  <app-trivia-quiz-questions></app-trivia-quiz-questions>
 </div>
 
 

@@ -5,10 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GameEngineService } from './game-engine.service';
+import { TriviaQuizQuestionsComponent } from './trivia-quiz-questions/trivia-quiz-questions.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TriviaQuizQuestionsComponent
   ],
   imports: [
     BrowserModule,
