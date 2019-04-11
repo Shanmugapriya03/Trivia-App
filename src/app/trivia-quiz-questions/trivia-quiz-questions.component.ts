@@ -17,7 +17,7 @@ export class TriviaQuizQuestionsComponent implements OnInit {
         .subscribe(
           response => {
             this.quizSet = JSON.parse(JSON.stringify(response['results']));
-            console.log(this.quizSet);
+            // console.log(this.quizSet);
             this.parseContent(this.quizSet);
             this.shuffleQuizOptions(this.quizSet);
           }
@@ -25,26 +25,26 @@ export class TriviaQuizQuestionsComponent implements OnInit {
   }
 
   // Decode logic for Decoding the Html Conent
-  decodeHtml(html){
+  decodeHtml(html : any){
     const text = document.createElement('textarea');
     text.innerHTML = html;
     return text.value;
   }
 
   // Decoding the question, correct and incorrect answer
-  parseContent(quizArr){
+  parseContent(quizArr : any){
     for(let i=0; i<quizArr.length; i++){
       quizArr[i].question = this.decodeHtml(quizArr[i].question);
       quizArr[i].correct_answer = this.decodeHtml(quizArr[i].correct_answer);
 
-      for(let j=0; j<quizArr[i].incorrect_answers; j++){
+      for(let j=0; j<quizArr[i].incorrect_answers.length; j++){
         quizArr[i].incorrect_answers[j] = this.decodeHtml(quizArr[i].incorrect_answers[j]);
       }
     }
   }
 
   //  Shuffle logic 
-  shuffle(arr){
+  shuffle(arr : any){
     let m = arr.length,t,i;
     while(m){
       i = Math.floor(Math.random() * m--);
@@ -56,7 +56,7 @@ export class TriviaQuizQuestionsComponent implements OnInit {
   }
 
   // Shuffling correct and incorrect options
-  shuffleQuizOptions(quizArr){
+  shuffleQuizOptions(quizArr : any){
     const tempQuizArr =JSON.parse(JSON.stringify(quizArr));
     const clubbedArr = [];
     for(let i=0;i<tempQuizArr.length;i++){
