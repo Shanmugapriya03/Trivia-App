@@ -3,9 +3,9 @@
   <br>
   <p>CHOICE :
     <span *ngFor="let choice of questionDetails?.choices; let j = index">
-      <button class="col-md-12 btn btn-light" 
-      [attr.id]="i.toString() + '-' + j.toString()" 
-      (click)="handleClick($event,questionDetails?.correct_answer)">
+      <button class="col-md-12 btn btn-light {{i.toString()}}" 
+      [attr.id]="i.toString() + '-' + j.toString()"
+      (click)="handleClick($event,questionDetails?.correct_answer,i.toString())">
       {{choice}}
       </button>
       <br><br>

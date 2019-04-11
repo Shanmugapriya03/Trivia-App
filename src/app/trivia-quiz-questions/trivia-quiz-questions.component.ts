@@ -69,9 +69,9 @@ export class TriviaQuizQuestionsComponent implements OnInit {
     }
   }
 
-  handleClick($event,correctAnswer) {
+  handleClick($event,correctAnswer,i) {
     const choosedAnswer = $event.target.innerText;
-    console.log($event);
+    const targetButtonGroup = document.getElementsByClassName(i);
     const clickedButton = document.getElementById($event.target.id);
     if(choosedAnswer === correctAnswer){
       clickedButton.classList.remove('btn-light');
@@ -80,5 +80,9 @@ export class TriviaQuizQuestionsComponent implements OnInit {
       clickedButton.classList.remove('btn-light');
       clickedButton.classList.add('btn-danger');
     }
+    for(let j=0;j<targetButtonGroup.length;j++){
+      targetButtonGroup[j]['disabled']=true;
+    }
+    
   }
 }
