@@ -17,7 +17,7 @@ export class TriviaQuizQuestionsComponent implements OnInit {
         .subscribe(
           response => {
             this.quizSet = JSON.parse(JSON.stringify(response['results']));
-            console.log(this.quizSet);
+            // console.log(this.quizSet);
             this.parseContent(this.quizSet);
             this.shuffleQuizOptions(this.quizSet);
           }
