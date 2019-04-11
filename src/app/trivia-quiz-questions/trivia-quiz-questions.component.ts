@@ -17,7 +17,7 @@ export class TriviaQuizQuestionsComponent implements OnInit {
         .subscribe(
           response => {
             this.quizSet = JSON.parse(JSON.stringify(response['results']));
-            // console.log(this.quizSet);
+            console.log(this.quizSet);
             this.parseContent(this.quizSet);
             this.shuffleQuizOptions(this.quizSet);
           }
@@ -69,20 +69,4 @@ export class TriviaQuizQuestionsComponent implements OnInit {
     }
   }
 
-  handleClick($event,correctAnswer,i) {
-    const choosedAnswer = $event.target.innerText;
-    const targetButtonGroup = document.getElementsByClassName(i);
-    const clickedButton = document.getElementById($event.target.id);
-    if(choosedAnswer === correctAnswer){
-      clickedButton.classList.remove('btn-light');
-      clickedButton.classList.add('btn-success');
-    }else{
-      clickedButton.classList.remove('btn-light');
-      clickedButton.classList.add('btn-danger');
-    }
-    for(let j=0;j<targetButtonGroup.length;j++){
-      targetButtonGroup[j]['disabled']=true;
-    }
-    
-  }
 }
