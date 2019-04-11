@@ -1,20 +1,15 @@
-<p>
-  <li *ngFor="let questionDetails of quizSet">
-    CATEGORY : {{questionDetails?.category}}
-    <br>
-    TYPE : {{questionDetails?.type}}
-    <br>
-    DIFFICULTY : {{questionDetails?.difficulty}}
-    <br>
-    Q : <span>{{questionDetails?.question}}</span>
-    <br>
-    CHOICE :
-    <p>
-      <span *ngFor="let choice of questionDetails?.choices">
-        {{choice}}
-        <br>
-      </span>
-    </p>
-    <hr>
-  </li>
-</p>
+<span *ngFor="let questionDetails of quizSet; let i = index">
+  <h4>Question : {{questionDetails?.question}}</h4>
+  <br>
+  <p>CHOICE :
+    <span *ngFor="let choice of questionDetails?.choices; let j = index">
+      <button class="col-md-12 btn btn-light" 
+      [attr.id]="i.toString() + '-' + j.toString()" 
+      (click)="handleClick($event,questionDetails?.correct_answer)">
+      {{choice}}
+      </button>
+      <br><br>
+    </span>
+  </p>
+  <hr>
+</span>

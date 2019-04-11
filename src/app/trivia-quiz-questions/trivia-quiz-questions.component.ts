@@ -68,4 +68,17 @@ export class TriviaQuizQuestionsComponent implements OnInit {
 
     }
   }
+
+  handleClick($event,correctAnswer) {
+    const choosedAnswer = $event.target.innerText;
+    console.log($event);
+    const clickedButton = document.getElementById($event.target.id);
+    if(choosedAnswer === correctAnswer){
+      clickedButton.classList.remove('btn-light');
+      clickedButton.classList.add('btn-success');
+    }else{
+      clickedButton.classList.remove('btn-light');
+      clickedButton.classList.add('btn-danger');
+    }
+  }
 }
