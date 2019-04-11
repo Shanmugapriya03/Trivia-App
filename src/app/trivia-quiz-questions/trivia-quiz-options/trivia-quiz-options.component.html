@@ -1,0 +1,10 @@
+<p *ngIf="quizChoices">CHOICE :
+  <span *ngFor="let choice of quizChoices?.choices; let j = index">
+    <button class="col-md-12 btn btn-light {{i.toString()}}" 
+    [attr.id]="i.toString() + '-' + j.toString()"
+    (click)="handleClick($event,quizChoices?.correct_answer,i.toString())">
+    {{choice}}
+   </button>
+    <br><br>
+  </span>
+</p>
