@@ -1,6 +1,6 @@
 <span *ngFor="let questionDetails of quizSet; let i = index">
-  <h4>Question {{i+1}} : {{questionDetails?.question}}</h4>
-  <br>
+  <h4>{{i+1}}) {{questionDetails?.question}}</h4>
+  <br><br>
   <app-trivia-quiz-options [quizChoices]="questionDetails" [i]="i"></app-trivia-quiz-options>
   <hr>
 </span>

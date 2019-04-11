@@ -19,10 +19,10 @@ export class TriviaQuizOptionsComponent implements OnInit {
     const targetButtonGroup = document.getElementsByClassName(i);
     const clickedButton = document.getElementById($event.target.id);
     if(choosedAnswer === correctAnswer){
-      clickedButton.classList.remove('btn-light');
+      clickedButton.classList.remove('btn-outline-secondary');
       clickedButton.classList.add('btn-success');
     }else{
-      clickedButton.classList.remove('btn-light');
+      clickedButton.classList.remove('btn-outline-secondary');
       clickedButton.classList.add('btn-danger');
     }
     for(let j=0;j<targetButtonGroup.length;j++){
